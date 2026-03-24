@@ -211,112 +211,112 @@ package MissionPackage {
 		part toolDevelopment:ToolDevelopment :> requiredCapabilites;
 
 		connection : CapabilityToGoalDerivation {
-			end capa :>> programmaticAndPublicAffairsManagement;
-			end goal :>> goToMoon;
+			end capa ::> programmaticAndPublicAffairsManagement;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> heavyLiftLaunch;
-			end goal :>> goToMoon;
+			end capa ::> heavyLiftLaunch;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> multiStagePropulsion;
-			end goal :>> goToMoon;
+			end capa ::> multiStagePropulsion;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> precisionOrbitalMechanics;
-			end goal :>> goToMoon;
+			end capa ::> precisionOrbitalMechanics;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> atmosphericReentryAndLanding;
-			end goal :>> goToMoon;
+			end capa ::> atmosphericReentryAndLanding;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> deepSpaceHabitationAndLifeSupport;
-			end goal :>> goToMoon;
+			end capa ::> deepSpaceHabitationAndLifeSupport;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> autonomousAndAssistedNavigationGuidanceAndControl;
-			end goal :>> goToMoon;
+			end capa ::> autonomousAndAssistedNavigationGuidanceAndControl;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> inSpacePropulsion;
-			end goal :>> goToMoon;
+			end capa ::> inSpacePropulsion;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> powerGenerationAndDistribution;
-			end goal :>> goToMoon;
+			end capa ::> powerGenerationAndDistribution;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> lunarSurfaceLandingAndAscent;
-			end goal1 :>> goToMoon;
-			end goal2 :>> samples;
-			end goal3 :>> deploy;
+			end capa ::> lunarSurfaceLandingAndAscent;
+			end goal1 ::> goToMoon;
+			end goal2 ::> samples;
+			end goal3 ::> deploy;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> globalTrackingAndCommunication;
-			end goal :>> goToMoon;
+			end capa ::> globalTrackingAndCommunication;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> realtimeMissionControl;
-			end goal :>> goToMoon;
+			end capa ::> realtimeMissionControl;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> contingencyPlanningAndRapidResponse;
-			end goal :>> goToMoon;
+			end capa ::> contingencyPlanningAndRapidResponse;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> crewTrainingAndSimulation;
-			end goal :>> goToMoon;
+			end capa ::> crewTrainingAndSimulation;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> humanPerformanceUnderExtremeStress;
-			end goal1 :>> goToMoon;
-			end goal2 :>> pictures;
+			end capa ::> humanPerformanceUnderExtremeStress;
+			end goal1 ::> goToMoon;
+			end goal2 ::> pictures;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> complexSoftwareDevelopment;
-			end goal :>> goToMoon;
+			end capa ::> complexSoftwareDevelopment;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> complexLogisticsAndIntegration;
-			end goal :>> goToMoon;
+			end capa ::> complexLogisticsAndIntegration;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> launchOperationsManagement;
-			end goal :>> goToMoon;
+			end capa ::> launchOperationsManagement;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> adaptabilityAndProblemSolving;
-			end goal :>> goToMoon;
+			end capa ::> adaptabilityAndProblemSolving;
+			end goal ::> goToMoon;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> extravehicularActivitySupport;
-			end goal1 :>> flag;
-			end goal2 :>> samples;
-			end goal3 :>> pictures;
-			end goal4 :>> deploy;
+			end capa ::> extravehicularActivitySupport;
+			end goal1 ::> flag;
+			end goal2 ::> samples;
+			end goal3 ::> pictures;
+			end goal4 ::> deploy;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> lunarMobility;
-			end goal :>> flag;
+			end capa ::> lunarMobility;
+			end goal ::> flag;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> scientificDataAcquisitionAndSampleReturn;
-			end goal1 :>> samples;
-			end goal2 :>> pictures;
-			end goal3 :>> deploy;
+			end capa ::> scientificDataAcquisitionAndSampleReturn;
+			end goal1 ::> samples;
+			end goal2 ::> pictures;
+			end goal3 ::> deploy;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> planetaryProtection;
-			end goal :>> samples;
+			end capa ::> planetaryProtection;
+			end goal ::> samples;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> robustCommunicationAndTelemetry;
-			end goal :>> pictures;
+			end capa ::> robustCommunicationAndTelemetry;
+			end goal ::> pictures;
 		} :> capabilityToGoals;
 		connection : CapabilityToGoalDerivation {
-			end capa :>> toolDevelopment;
-			end goal :>> deploy;
+			end capa ::> toolDevelopment;
+			end goal ::> deploy;
 		} :> capabilityToGoals;
 	}
 }
