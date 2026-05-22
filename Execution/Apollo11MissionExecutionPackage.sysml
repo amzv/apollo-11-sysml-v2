@@ -80,7 +80,7 @@ package Apollo11MissionExecutionPackage {
 				doc /* State Activation: LaunchPhase begins with liftoff. */
 				attribute missionTime :> ISQ::time = 0 [s];
 				snapshot missionSystemAtT0 :> apollo11MissionSystem {
-					attribute velocity :> ISQ::speed = 0 [SI::'m⋅s⁻¹'];
+					attribute velocity :> ISQ::speed = 0 ['m⋅s⁻¹'];
 					part :>> launchVehicle {
 						part :>> stage1 {
 							attribute thrust :> ISQ::force = 35100 ['kN'];
@@ -102,7 +102,7 @@ package Apollo11MissionExecutionPackage {
 				doc /* Separation Event: The S-IC first stage separates. */
 				attribute missionTime :> ISQ::time = 168 [s];
 				snapshot missionSystemAtS1Sep :> apollo11MissionSystem {
-					attribute velocity :> ISQ::speed = 2400 [m/s];
+					attribute velocity :> ISQ::speed = 2400 ['m⋅s⁻¹'];
 					attribute altitude :> ISQ::length = 67 ['km'];
 					part :>> launchVehicle {
 						perform LaunchSystem::provideStage2Thrust :>> provideStage2Thrust;
@@ -113,7 +113,7 @@ package Apollo11MissionExecutionPackage {
 				doc /* Separation Event: The S-II second stage separates. */
 				attribute missionTime :> ISQ::time = 540 [s];
 				snapshot missionSystemAtS2Sep :> apollo11MissionSystem {
-					attribute velocity :> ISQ::speed = 6800 [m/s];
+					attribute velocity :> ISQ::speed = 6800 ['m⋅s⁻¹'];
 					attribute altitude :> ISQ::length = 185 ['km'];
 					part :>> launchVehicle {
 						perform LaunchSystem::provideOrbitInsertionThrust :>> provideOrbitInsertionThrust;
@@ -143,7 +143,7 @@ package Apollo11MissionExecutionPackage {
 				attribute missionTime :> ISQ::time = 10384 [s];
 				snapshot missionSystemAtTLIEnd :> apollo11MissionSystem {
 					attribute status: String = "Translunar trajectory established";
-					attribute velocity :> ISQ::speed = 10840 [m/s];
+					attribute velocity :> ISQ::speed = 10840 ['m⋅s⁻¹'];
 				}
 			}
 		}
