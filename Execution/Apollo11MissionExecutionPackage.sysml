@@ -38,6 +38,7 @@ package Apollo11MissionExecutionPackage {
 				doc /* The flight crew begins entering the Command Module 'Columbia'. */
 				attribute missionTime :> ISQ::time = -9000 ['s']; 
 				snapshot missionSystemAtIngress :> apollo11MissionSystem {
+					part :>> spaceSuits[2];
 					part :>> spacecraft {
 						part :>> csm {
 							part :>> commandModule {
@@ -340,6 +341,7 @@ package Apollo11MissionExecutionPackage {
 				doc /* The EVA is complete and the crew are back inside the LM. */
 				attribute missionTime :> ISQ::time = 393300 [s];
 				snapshot missionSystemAtEVAEnd :> apollo11MissionSystem {
+					part :>> spaceSuits[2];
 					part :>> spacecraft {
 						part :>> lm {
 							attribute samplesStowed: Boolean = true;
