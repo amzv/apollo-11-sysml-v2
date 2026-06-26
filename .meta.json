@@ -1,5 +1,6 @@
 {
   "index": {
+    "AirplanePackage": "TestingPackages/Airplane.sysml",
     "Apollo11Model": "Apollo11Model.sysml",
     "AnalysisPackage": "Analysis/AnalysisPackage.sysml",
     "CalculationsPackage": "Analysis/CalculationsPackage.sysml",
@@ -140,6 +141,10 @@
       "algorithm": "NONE"
     },
     "Technical/TechnicalPortsPackage.sysml": {
+      "value": "",
+      "algorithm": "NONE"
+    },
+    "TestingPackages/Airplane.sysml": {
       "value": "",
       "algorithm": "NONE"
     }
