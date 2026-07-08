@@ -22,6 +22,8 @@ package SystemPackage {
 		
 		part spaceSuits[0..2] : ExtravehicularMobilityUnit :> constituentSystems;
 		
+		part lunarRover : LunarRovingVehicle :> constituentSystems;
+		
 		interface lvToPayload : LVPayloadInterface connect
 			launchVehicle.instrumentUnit.payloadInterfacePort to spacecraft.spacecraftLMAdapter.launchVehicleInterfacePort;
 	}

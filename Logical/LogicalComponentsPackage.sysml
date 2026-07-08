@@ -86,4 +86,11 @@ package LogicalComponentsPackage {
 		perform action transferCrewAndMaterials : TransferCrewAndMaterials;
 		perform action prepareVehicleForReentry : PrepareVehicleForReentry;
 	}
+
+	part def LunarSurfaceMobilitySystem :> LogicalComponent {
+		doc /* This system provides powered ground mobility on the lunar surface, enabling the crew to extend the range and productivity of EVA traverses, and independently relaying communications to Earth. */
+		perform action provideLunarSurfaceMobility : ProvideLunarSurfaceMobility;
+		perform action relayLunarCommunications : RelayLunarCommunications;
+		perform action navigateLunarSurface : NavigateLunarSurface;
+	}
 }

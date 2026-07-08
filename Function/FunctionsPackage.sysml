@@ -238,6 +238,32 @@ package FunctionsPackage {
 		doc /* Manages the crew rest period while on the lunar surface. */
 		#refinement dependency ConductSurfaceRestPeriod to OperationsPackage::ManageLunarSurfaceRestPeriod;
 	}
+
+	action def DeployLunarRover :> Function {
+		in currentStatus: VehicleStatus;
+		out deployedRoverStatus: VehicleStatus;
+		doc /* Unfolds and deploys the Lunar Roving Vehicle from the Quad 1 bay of the LM Descent Stage, and performs deployment checkout. */
+		#refinement dependency DeployLunarRover to OperationsPackage::PerformLunarEVA;
+	}
+
+	action def ProvideLunarSurfaceMobility :> Function {
+		in currentStatus: VehicleStatus;
+		out traverseStatus: VehicleStatus;
+		doc /* Transports two suited astronauts and their equipment across the lunar surface to designated exploration sites, extending EVA range beyond walking distance. */
+		#refinement dependency ProvideLunarSurfaceMobility to OperationsPackage::PerformLunarEVA;
+	}
+
+	action def NavigateLunarSurface :> Function {
+		in currentStatus: VehicleStatus;
+		out navigationStatus: VehicleStatus;
+		doc /* Uses the directional gyro, odometers, and sun-shadow device to provide dead-reckoning navigation and bearing/range-to-LM readouts. */
+		#refinement dependency NavigateLunarSurface to OperationsPackage::PerformLunarEVA;
+	}
+
+	action def RelayLunarCommunications :> Function {
+		doc /* Operates the Lunar Communications Relay Unit (LCRU) to provide ground-controlled TV coverage and relay voice and telemetry data directly to Earth. */
+		#refinement dependency RelayLunarCommunications to OperationsPackage::CommunicateWithMissionControl;
+	}
 	
 	action def ExecuteAscentBurn :> Function {
 		in currentStatus: VehicleStatus;
@@ -465,7 +491,11 @@ package FunctionsPackage {
 		doc /* Conducts all planned extravehicular activities on the Moon. Corresponds to the LunarSurfaceOperationsPhase. */
 		action postLand: PerformPostLandingCheck;
 		action prepEva: PrepareForExtravehicularActivity;
+		action deployRover: DeployLunarRover;
 		action provideIndividualLifesupport: ProvideIndividualLifesupport;
+		action provideMobility: ProvideLunarSurfaceMobility;
+		action navigate: NavigateLunarSurface;
+		action relayComms: RelayLunarCommunications;
 		action eva: ConductSurfaceExploration;
 		action collect: GatherLunarSamples;
 		action deploy: DeploySurfaceExperiments;

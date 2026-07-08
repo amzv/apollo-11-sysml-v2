@@ -119,6 +119,8 @@ package TechnicalComponentsPackage {
 		attribute :>> failureRate = 3.0E-6 [1/h];		
 		
 		port upperStagePort : LMStagingPort;
+		port lrvStowagePort : LRVStowagePort;
+		part lunarFlagAssembly : LunarFlagAssembly;
 	}
 
 	part def LunarModuleAscentStage :> PropelledSpacecraft, PowerConsumer, PowerProvider {
@@ -135,6 +137,11 @@ package TechnicalComponentsPackage {
 		port dockingPort : DockingPort;
 	}
 
+	part def LunarFlagAssembly :> HardwareComponent {
+		doc /* The American flag and its deployment assembly */
+		attribute :>> mass = 4.3 [kg]; // Approximate mass of the Lunar Flag Assembly
+	}
+
 	part def ApolloSpacecraftLMAdapter :> HardwareComponent {
 		doc /* A conical structure that housed the Lunar Module during launch and connected the Apollo spacecraft to the Saturn V. */
 		attribute :>> mass = 1840 [kg];
@@ -149,11 +156,13 @@ package TechnicalComponentsPackage {
 		part commandServiceModule : ApolloCommandServiceModule;
 		part lunarModule : ApolloLunarModule;
 		part spacecraftLMAdapter : ApolloSpacecraftLMAdapter;
+		part lunarRover[0..1] : LunarRovingVehicle;
 
 		interface cmLMDocking : DockingInterface connect commandServiceModule.commandModule.dockingPort to  lunarModule.lunarModuleAscentStage.dockingPort;
 		
 		interface : StagingInterface connect spacecraftLMAdapter.csmInterfacePort to commandServiceModule.serviceModule.launchVehicleInterfacePort;
 		interface lesConnection : LESInterface connect commandServiceModule.commandModule.lesInterfacePort to launchEscapeSystem.cmInterfacePort;
+		interface lrvStowage[0..1] : LRVStowageInterface connect lunarModule.lunarModuleDescentStage.lrvStowagePort to lunarRover.lrvStowagePort;
 	}
 
 	part def SaturnV :> MultistageRocket, LaunchSystem {
@@ -249,5 +258,63 @@ package TechnicalComponentsPackage {
 	part def PortableLifeSupportSystem :> HardwareComponent {
 		doc /* The 'backpack' containing oxygen, CO2 scrubbers, cooling water, and communications equipment. */
 		port umbilicalPort : EVAUmbilicalPort;
-	}	
+	}
+
+	// ===================================================================
+	//  Lunar Roving Vehicle (LRV) Component Hierarchy
+	// ===================================================================
+
+	part def LRVChassis :> HardwareComponent {
+		doc /* The foldable aluminium chassis of the LRV, designed to collapse for stowage in a single quadrant bay of the LM Descent Stage. */
+		attribute :>> mass = 54 [kg];
+		attribute :>> failureRate = 1E-7 [1/h];
+	}
+
+	part def LRVWheelAssembly :> HardwareComponent {
+		doc /* An individual wheel and tire assembly, consisting of a woven zinc-coated piano-wire mesh tire with titanium chevron treads, and an integrated DC electric drive motor. */
+		attribute :>> mass = 12 [kg];
+		attribute wheelDiameter :> ISQ::length = 0.813 [m];
+		attribute :>> failureRate = 2E-6 [1/h];
+	}
+
+	part def LRVBatteryPack :> HardwareComponent, PowerProvider {
+		doc /* A non-rechargeable silver-zinc potassium hydroxide battery providing traction and system power. Two packs were carried, each rated at 36V. */
+		attribute :>> mass = 27 [kg];
+		attribute batteryCapacity :> ISQ::energy = 15660 ['kJ']; // ~4.35 kWh per pack
+		attribute :>> powerGenerated = 800 [W];
+		attribute :>> failureRate = 3E-6 [1/h];
+	}
+
+	part def LRVNavigationSystem :> HardwareComponent, PowerConsumer {
+		doc /* The navigation system providing dead-reckoning positioning via a directional gyro, odometers on each wheel, and a sun-shadow device for heading reference. */
+		attribute :>> mass = 12 [kg];
+		attribute :>> powerLoad = 50 [W];
+		attribute :>> failureRate = 5E-6 [1/h];
+	}
+
+	part def LRVCommunicationsRelay :> HardwareComponent, PowerConsumer {
+		doc /* The Lunar Communications Relay Unit (LCRU), a ground-controlled colour TV camera and high-gain antenna enabling direct S-Band communication with Earth. */
+		attribute :>> mass = 25 [kg];
+		attribute :>> powerLoad = 150 [W];
+		attribute :>> failureRate = 4E-6 [1/h];
+	}
+
+	part def LunarRovingVehicle :> System, EVASystem {
+		doc /* The Apollo Lunar Roving Vehicle (LRV), a lightweight, electric-powered, four-wheeled rover designed to extend the range and productivity of astronaut EVAs on the lunar surface. First deployed on Apollo 15. */
+		attribute maxSpeed :> ISQ::speed = 3.6 [m/s]; // ~13 km/h
+		attribute maxRange :> ISQ::length = 65000 [m]; // 65 km operational range
+		attribute maxPayload :> ISQ::mass = 490 [kg];
+
+		part chassis : LRVChassis;
+		part leftFrontWheel : LRVWheelAssembly;
+		part rightFrontWheel : LRVWheelAssembly;
+		part leftRearWheel : LRVWheelAssembly;
+		part rightRearWheel : LRVWheelAssembly;
+		part batteryPack1 : LRVBatteryPack;
+		part batteryPack2 : LRVBatteryPack;
+		part navigationSystem : LRVNavigationSystem;
+		part communicationsRelay : LRVCommunicationsRelay;
+
+		port lrvStowagePort : ~LRVStowagePort;
+	}
 }

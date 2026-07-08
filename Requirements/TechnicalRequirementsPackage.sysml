@@ -1205,4 +1205,56 @@ package TechnicalRequirementsPackage {
 		}
 		#refinement dependency 'CLR-R117' to FunctionalRequirementsPackage::'FLR-R079';
 	}	
+
+	// ===================================================================
+	//  Lunar Roving Vehicle (LRV) Requirements
+	// ===================================================================
+
+	requirement def <'CLR-R118'> LRVMaxSpeed {
+		doc /* The Lunar Roving Vehicle shall be capable of a maximum speed of no less than 13 km/h (3.6 m/s) on the lunar surface. */
+		@Rationale {
+			text = "A minimum speed threshold ensures the crew can efficiently traverse between geologically significant sites within the limited EVA time budget.";
+		}
+		#refinement dependency 'CLR-R118' to FunctionalRequirementsPackage::'FLR-R055';
+	}
+
+	requirement def <'CLR-R119'> LRVRange {
+		doc /* The Lunar Roving Vehicle shall provide a minimum operational range of 65 km on a single battery charge. */
+		@Rationale {
+			text = "The range must be sufficient to support multiple EVA traverses across the planned exploration area, with margin for contingencies and walk-back constraints.";
+		}
+		#refinement dependency 'CLR-R119' to FunctionalRequirementsPackage::'FLR-R055';
+	}
+
+	requirement def <'CLR-R120'> LRVPayloadCapacity {
+		doc /* The Lunar Roving Vehicle shall carry a payload of at least 490 kg, including two fully-suited astronauts, tools, and collected samples. */
+		@Rationale {
+			text = "The payload capacity must accommodate the crew in their EVA suits plus the scientific tools and sample collection containers needed for geological traverses.";
+		}
+		#refinement dependency 'CLR-R120' to FunctionalRequirementsPackage::'FLR-R055';
+	}
+
+	requirement def <'CLR-R121'> LRVDeployability {
+		doc /* The Lunar Roving Vehicle shall be foldable and stowable within a single quadrant bay of the LM Descent Stage, and deployable by two astronauts without tools. */
+		@Rationale {
+			text = "Volume constraints of the LM Descent Stage dictate that the LRV must collapse into a compact form for launch and be reliably deployable on the lunar surface.";
+		}
+		#refinement dependency 'CLR-R121' to FunctionalRequirementsPackage::'FLR-R055';
+	}
+
+	requirement def <'CLR-R122'> LRVPowerSystem {
+		doc /* The Lunar Roving Vehicle shall be powered by non-rechargeable batteries with a minimum total energy capacity of 8.7 kWh (31,320 kJ). */
+		@Rationale {
+			text = "The battery capacity must supply sufficient energy for traction motors, navigation, and communications over the full planned traverse distance with margin.";
+		}
+		#refinement dependency 'CLR-R122' to FunctionalRequirementsPackage::'FLR-R055';
+	}
+
+	requirement def <'CLR-R123'> LRVCommunicationsRelay {
+		doc /* The Lunar Communications Relay Unit (LCRU) shall provide a direct S-Band and VHF communications link between the lunar surface and Earth mission control, including ground-controlled colour television. */
+		@Rationale {
+			text = "The LCRU extends mission communications beyond the LM vicinity, enabling real-time voice, telemetry, and television relay from remote traverse stations.";
+		}
+		#refinement dependency 'CLR-R123' to FunctionalRequirementsPackage::'FLR-R060';
+	}
 }

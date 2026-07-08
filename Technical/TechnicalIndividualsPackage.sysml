@@ -212,4 +212,15 @@ package TechnicalIndividualsPackage {
 	individual part def 'LM-15' :> ApolloLunarModule {
 		doc /* Not flown, intended for modification into Apollo Telescope Mount. Incomplete,scrapped */
 	} 		
+
+	// https://en.wikipedia.org/wiki/Lunar_Roving_Vehicle
+	individual part def 'LRV-1' :> LunarRovingVehicle {
+		doc /* Apollo 15. First LRV deployed at Hadley-Apennine. Total distance driven: 27.8 km. Remains on the lunar surface. */
+	}
+	individual part def 'LRV-2' :> LunarRovingVehicle {
+		doc /* Apollo 16. Second LRV deployed at Descartes Highlands. Total distance driven: 26.7 km. Remains on the lunar surface. */
+	}
+	individual part def 'LRV-3' :> LunarRovingVehicle {
+		doc /* Apollo 17. Third and final LRV deployed at Taurus-Littrow. Total distance driven: 35.9 km. Farthest single traverse: 20.1 km. Remains on the lunar surface. */
+	}
 }

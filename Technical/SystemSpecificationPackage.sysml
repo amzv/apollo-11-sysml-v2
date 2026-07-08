@@ -227,7 +227,7 @@ package SystemSpecificationPackage {
 		satisfy 'clr-R116' by apollo11MissionSystem.spacecraft.lm.lunarModuleAscentStage;
 
 		satisfy 'clr-R068' by apollo11MissionSystem.spaceSuits.psa;
-		satisfy 'clr-R110' by apollo11MissionSystem.spaceSuits.psa;
+		satisfy 'clr-R110' by apollo11MissionSystem.spacecraft.lm.lunarModuleDescentStage.lunarFlagAssembly;
 		satisfy 'clr-R111' by apollo11MissionSystem.spaceSuits.psa;
 		satisfy 'clr-R113' by apollo11MissionSystem.spaceSuits.psa;
 		satisfy 'clr-R024' by apollo11MissionSystem.spaceSuits.plss;
@@ -235,13 +235,31 @@ package SystemSpecificationPackage {
 		satisfy 'clr-R035' by apollo11MissionSystem.spaceSuits.plss;
 
 
+		requirement 'clr-R118' : LRVMaxSpeed;
+		requirement 'clr-R119' : LRVRange;
+		requirement 'clr-R120' : LRVPayloadCapacity;
+		requirement 'clr-R121' : LRVDeployability;
+		requirement 'clr-R122' : LRVPowerSystem;
+		requirement 'clr-R123' : LRVCommunicationsRelay;
+
+		satisfy 'clr-R080' by apollo11MissionSystem.launchVehicle.instrumentUnit;		
+
 		satisfy 'clr-R113' by apollo11MissionSystem.spacecraft.cmLMDocking;
 		satisfy 'clr-R092' by apollo11MissionSystem.spacecraft.spacecraftLMAdapter;
 		satisfy 'clr-R083' by apollo11MissionSystem.launchVehicle.instrumentUnit;
 		satisfy 'clr-R096' by apollo11MissionSystem.launchVehicle.instrumentUnit;
 		satisfy 'clr-R097' by apollo11MissionSystem.launchVehicle.instrumentUnit;
 		satisfy 'clr-R098' by apollo11MissionSystem.launchVehicle.instrumentUnit;
-		satisfy 'clr-R080' by apollo11MissionSystem.launchVehicle.instrumentUnit;		
+		satisfy 'clr-R080' by apollo11MissionSystem.launchVehicle.instrumentUnit;
+
+		// LRV Requirement Satisfaction
+		satisfy 'clr-R118' by apollo11MissionSystem.lunarRover;
+		satisfy 'clr-R119' by apollo11MissionSystem.lunarRover;
+		satisfy 'clr-R120' by apollo11MissionSystem.lunarRover;
+		satisfy 'clr-R121' by apollo11MissionSystem.lunarRover;
+		satisfy 'clr-R122' by apollo11MissionSystem.lunarRover.batteryPack1;
+		satisfy 'clr-R122' by apollo11MissionSystem.lunarRover.batteryPack2;
+		satisfy 'clr-R123' by apollo11MissionSystem.lunarRover.communicationsRelay;
 		
 	}
 }

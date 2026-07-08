@@ -121,4 +121,17 @@ package TechnicalPortsPackage {
 		end launchEscapeSystem : ~LaunchEscapeSystemPort;
 	}	
 
+	port def LRVStowagePort {
+		doc /* Defines the connection point on the LM Descent Stage quadrant bay for stowing and deploying the Lunar Roving Vehicle. */
+		inout item loads : StructuralLoad;
+		out item deployCommand : CommandSignal;
+		out item power : ElectricalPower;
+	}
+
+	interface def LRVStowageInterface {
+		doc /* Defines the contract for the stowage and deployment connection between the LM Descent Stage and the Lunar Roving Vehicle. */
+		end stowageBay : LRVStowagePort;
+		end rover : ~LRVStowagePort;
+	}
+
 }
