@@ -93,6 +93,7 @@ package MissionPhasesPackage {
 			then action conductLMPostLandingChecks : ConductLMPostLandingChecks;
 			then action prepareForEVA : PrepareForEVA;
 			then action performLunarEVA : PerformLunarEVA;
+			then action movehighSpeed: MoveAtHighSpeedOnLunarSurface;
 			then action collectLunarSamples : CollectLunarSamples;
 			then action deployScientificInstruments : DeployScientificInstruments;
 			then action concludeEVA : ConcludeEVA;

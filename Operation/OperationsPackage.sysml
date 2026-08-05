@@ -134,4 +134,9 @@ package OperationsPackage {
 	action def SecureLunarSamples :> Operation {
 		doc /* The process of packaging and transporting the returned lunar samples to the Lunar Receiving Laboratory. */
 	}
+
+	action def MoveAtHighSpeedOnLunarSurface :> Operation {
+		doc /* The process of the lunar surface at high speeds, where high speed is faster than a human walking pace */
+	}
+
 }

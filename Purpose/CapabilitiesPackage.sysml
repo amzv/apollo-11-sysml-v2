@@ -128,8 +128,9 @@ package CapabilitiesPackage {
 	}
 
 	part def LunarMobility :> Capability {
-		doc /* The ability for astronauts to move and work efficiently in lunar gravity. */
+		doc /* The ability for astronauts to move and work efficiently in lunar gravity including a larger surface area to traverse. */
 		#refinement dependency LunarMobility to 'SHN-N004';
+		#refinement dependency LunarMobility to 'SHN-N005';
 	}
 
 	part def ScientificDataAcquisitionAndSampleReturn :> Capability {
@@ -152,5 +153,6 @@ package CapabilitiesPackage {
 		doc /* Creating specialized tools for lunar surface tasks (e.g., sample collection, instrument deployment). */
 		#refinement dependency ToolDevelopment to 'SHN-N008';
 	}
+
 
 }

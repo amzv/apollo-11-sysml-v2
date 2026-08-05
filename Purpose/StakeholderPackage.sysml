@@ -221,5 +221,21 @@ package StakeholderPackage {
 		} :> concerns;
 	}
 
+	part Boeing : AerospaceCompany {
+		:> influenceLevel = StakeholderInfluenceLevel::high;
+		:> influenceKind = StakeholderInfluenceKind::direct;
+		item programConcern1 : Concern {
+			doc /* Successful First Stage of Saturn Rocket */
+		} :> concerns;
+		item programConcern2 : Concern {
+			doc /* Successful Lunar Roving Vehicle */
+		} :> concerns;
+		item concern2 : Concern {
+			doc /* Meeting Schedule & Budget */
+		} :> concerns;
+		item concern3 : Concern {
+			doc /* Company Reputation */
+		} :> concerns;
+	}
 
 }
