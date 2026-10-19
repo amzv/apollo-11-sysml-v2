@@ -66,7 +66,7 @@ library package CoSMAPackage {
 		part system : System;
 		part context : Context;
 		exhibit state phases : StateAction;
-		part requiredCapabilites[0..*];
+		part requiredCapabilities[0..*];
 		abstract connection capabilityToGoals[*] : CapabilityToGoalDerivation;
 		attribute plannedDuration :> ISQ::duration;
 

@@ -185,31 +185,31 @@ package MissionPackage {
 
 		} :>> phases;
 
-		part programmaticAndPublicAffairsManagement:ProgrammaticAndPublicAffairsManagement :> requiredCapabilites;
-		part heavyLiftLaunch:HeavyLiftLaunch :> requiredCapabilites;
-		part multiStagePropulsion:MultiStagePropulsion :> requiredCapabilites;
-		part precisionOrbitalMechanics:PrecisionOrbitalMechanics :> requiredCapabilites;
-		part atmosphericReentryAndLanding:AtmosphericReentryAndLanding :> requiredCapabilites;
-		part deepSpaceHabitationAndLifeSupport:DeepSpaceHabitationAndLifeSupport :> requiredCapabilites;
-		part autonomousAndAssistedNavigationGuidanceAndControl:AutonomousAndAssistedNavigationGuidanceAndControl :> requiredCapabilites;
-		part inSpacePropulsion:InSpacePropulsion :> requiredCapabilites;
-		part powerGenerationAndDistribution:PowerGenerationAndDistribution :> requiredCapabilites;
-		part lunarSurfaceLandingAndAscent:LunarSurfaceLandingAndAscent :> requiredCapabilites;
-		part globalTrackingAndCommunication:GlobalTrackingAndCommunication :> requiredCapabilites;
-		part realtimeMissionControl:RealtimeMissionControl :> requiredCapabilites;
-		part contingencyPlanningAndRapidResponse:ContingencyPlanningAndRapidResponse :> requiredCapabilites;
-		part crewTrainingAndSimulation:CrewTrainingAndSimulation :> requiredCapabilites;
-		part humanPerformanceUnderExtremeStress:HumanPerformanceUnderExtremeStress :> requiredCapabilites;
-		part complexSoftwareDevelopment:ComplexSoftwareDevelopment :> requiredCapabilites;
-		part complexLogisticsAndIntegration:ComplexLogisticsAndIntegration :> requiredCapabilites;
-		part launchOperationsManagement:LaunchOperationsManagement :> requiredCapabilites;
-		part adaptabilityAndProblemSolving:AdaptabilityAndProblemSolving :> requiredCapabilites;
-		part extravehicularActivitySupport:ExtravehicularActivitySupport :> requiredCapabilites;
-		part lunarMobility:LunarMobility :> requiredCapabilites;
-		part scientificDataAcquisitionAndSampleReturn:ScientificDataAcquisitionAndSampleReturn :> requiredCapabilites;
-		part planetaryProtection:PlanetaryProtection :> requiredCapabilites;
-		part robustCommunicationAndTelemetry:RobustCommunicationAndTelemetry :> requiredCapabilites;
-		part toolDevelopment:ToolDevelopment :> requiredCapabilites;
+		part programmaticAndPublicAffairsManagement:ProgrammaticAndPublicAffairsManagement :> requiredCapabilities;
+		part heavyLiftLaunch:HeavyLiftLaunch :> requiredCapabilities;
+		part multiStagePropulsion:MultiStagePropulsion :> requiredCapabilities;
+		part precisionOrbitalMechanics:PrecisionOrbitalMechanics :> requiredCapabilities;
+		part atmosphericReentryAndLanding:AtmosphericReentryAndLanding :> requiredCapabilities;
+		part deepSpaceHabitationAndLifeSupport:DeepSpaceHabitationAndLifeSupport :> requiredCapabilities;
+		part autonomousAndAssistedNavigationGuidanceAndControl:AutonomousAndAssistedNavigationGuidanceAndControl :> requiredCapabilities;
+		part inSpacePropulsion:InSpacePropulsion :> requiredCapabilities;
+		part powerGenerationAndDistribution:PowerGenerationAndDistribution :> requiredCapabilities;
+		part lunarSurfaceLandingAndAscent:LunarSurfaceLandingAndAscent :> requiredCapabilities;
+		part globalTrackingAndCommunication:GlobalTrackingAndCommunication :> requiredCapabilities;
+		part realtimeMissionControl:RealtimeMissionControl :> requiredCapabilities;
+		part contingencyPlanningAndRapidResponse:ContingencyPlanningAndRapidResponse :> requiredCapabilities;
+		part crewTrainingAndSimulation:CrewTrainingAndSimulation :> requiredCapabilities;
+		part humanPerformanceUnderExtremeStress:HumanPerformanceUnderExtremeStress :> requiredCapabilities;
+		part complexSoftwareDevelopment:ComplexSoftwareDevelopment :> requiredCapabilities;
+		part complexLogisticsAndIntegration:ComplexLogisticsAndIntegration :> requiredCapabilities;
+		part launchOperationsManagement:LaunchOperationsManagement :> requiredCapabilities;
+		part adaptabilityAndProblemSolving:AdaptabilityAndProblemSolving :> requiredCapabilities;
+		part extravehicularActivitySupport:ExtravehicularActivitySupport :> requiredCapabilities;
+		part lunarMobility:LunarMobility :> requiredCapabilities;
+		part scientificDataAcquisitionAndSampleReturn:ScientificDataAcquisitionAndSampleReturn :> requiredCapabilities;
+		part planetaryProtection:PlanetaryProtection :> requiredCapabilities;
+		part robustCommunicationAndTelemetry:RobustCommunicationAndTelemetry :> requiredCapabilities;
+		part toolDevelopment:ToolDevelopment :> requiredCapabilities;
 
 		connection : CapabilityToGoalDerivation {
 			end capa ::> programmaticAndPublicAffairsManagement;
